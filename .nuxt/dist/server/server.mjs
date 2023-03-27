@@ -1,0 +1,1 @@
+export { default } from "file:///home/quantumben/Desktop/VueSchool/laravel-frontend-for-vuejs-3/node_modules/@nuxt/vite-builder/dist/runtime/vite-node.mjs"
