@@ -52,7 +52,7 @@ export const useAuth = () => {
       }
 
     async function login(payload: LoginPayload){
-        await axios.post("api/login", payload);
+        await axios.post("/login", payload);
        useRouter().push("/me");
      }
 
@@ -72,7 +72,7 @@ export const useAuth = () => {
       }
 
     async function register(payload: RegisterPayload){
-        await axios.post("api/register", payload);
+        await axios.post("/register", payload);
         await login({
             email: payload.email,
             password: payload.password
