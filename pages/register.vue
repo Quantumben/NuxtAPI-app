@@ -1,20 +1,11 @@
 <script setup lang="ts">
-
-import axios from 'axios';
-import { password } from '@formkit/icons';
-
-
 definePageMeta({
   layout: "centered",
   middleware: ["guest"],
 });
 
-interface RegisterPayload{
-  name:  string;
-  email: string;
-  password: string;
-  password_confirmation: string;
-}
+
+const { register } = useAuth();
 
 const form = ref({
   name: "",
@@ -23,14 +14,7 @@ const form = ref({
   password_confirmation: "",
 });
 
-async function register(payload: RegisterPayload){
-  await axios.post("api/register", payload);
-  await axios.post("api/login", {
-    email: payload.email,
-    password: payload.password
-  });
-  useRouter().push('/me');
-}
+
 
 
 </script>
