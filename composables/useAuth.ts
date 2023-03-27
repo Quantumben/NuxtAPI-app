@@ -28,11 +28,10 @@ export const useAuth = () => {
 
     async function register(payload: RegisterPayload){
         await axios.post("api/register", payload);
-        await axios.post("api/login", {
-          email: payload.email,
-          password: payload.password
-        });
-        useRouter().push('/me');
+        await login({
+            email: payload.email,
+            password: payload.password
+          });
       }
 
      return {
